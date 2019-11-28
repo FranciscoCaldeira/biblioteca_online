@@ -24,6 +24,9 @@ Route::get('/contact', function () {
     return view('page.contact');
 });
 
+Route::get('/faqs', function () {
+    return view('page.faqs');
+});
 
 
 Auth::routes();
@@ -34,5 +37,10 @@ Auth::routes();
 
 
 //Zona privada (com o name dá para fazer redirects)
-Route::get('/home', 'HomeController@index')->name('home'); //home normal é po user
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return Redirect::to('login');
+ });
 
