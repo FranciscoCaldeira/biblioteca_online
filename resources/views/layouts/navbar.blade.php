@@ -16,12 +16,12 @@
 		  <a href="{{ url('/contact') }}" class="btn-nav"> Contactos</a>
 		</li>
 		<li>
-		  <a href="{{ url('/faqs') }}" class="btn-nav"> FAQS</a>
+		  <a href="{{ url('/') }}" class="btn-nav"> FAQS</a>
 		</li>
 			@if (Route::has('login'))
 					@auth
 					<li>
-						<a class="btn-nav" href="{{ url('/home') }}">HomeLaravel-Homepage</a>
+						<a class="btn-nav" href="{{ url('/home') }}">HomeLaravel-LOgadoTEu homepage</a>
 					</li>
 					@else
 						<li>
