@@ -25,6 +25,9 @@ Route::get('/contact', function () {
 });
 
 
+Route::get('/faqs', function () {
+    return view('page.faqs');
+});
 
 Auth::routes();
 
