@@ -1,8 +1,8 @@
-
-
-
 @extends('layouts.app')
 
 @section('content')
-    <h1>about</h1>
+    @component('layouts.component.title')
+        Sobre
+    @endcomponent
+
 @endsection

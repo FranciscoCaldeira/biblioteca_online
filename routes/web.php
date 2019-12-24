@@ -12,6 +12,13 @@
 */
 
 /* Public pages*/
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
+
+Route::post('/contact/submit', 'MessageController@submit')->name('submit_msg');
+
 Route::get('/', function () {
     return view('page.home');
 });

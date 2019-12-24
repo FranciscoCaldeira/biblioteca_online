@@ -34,16 +34,9 @@
     }
 </script>
 
-
-<div class="container_titulo">
-    <span class="hr_esquerda">
-        <span class="hr"></span>
-    </span>
-    <h4 class="titulo">Notícias / Destaques</h4>
-    <span class="hr_direita">
-        <span class="hr"></span>
-    </span>
-</div>
+    @component('layouts.component.title')
+        Notícias / Destaques
+    @endcomponent
 
     <div>Agenda</div>
     <div>Sugestões de livros</div>

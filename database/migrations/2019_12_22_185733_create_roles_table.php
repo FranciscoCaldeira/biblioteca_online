@@ -13,18 +13,19 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('roles');
         Schema::create('roles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('description');
             $table->timestamps();
         });
 
-        DB::table('roles')->insert([ 
-                ['id' => 1, 'name' => 'user'],
-                ['id' => 2, 'name' => 'admin'],
-                ['id' => 3, 'name' => 'admin_super'],
-            ]
-        );
+        //Schema::table('roles')->dba_insert
+        // DB::table('roles')->insert([ 
+        //     ['id' => 1, 'description' => 'user' , 'created_at' => date("Y-m-d H:i:s")],
+        //     ['id' => 2, 'description' => 'admin', 'created_at' => date("Y-m-d H:i:s")],
+        //     ['id' => 3, 'description' => 'admin_super', 'created_at' => date("Y-m-d H:i:s")]
+        // ]);
     }
 
     /**

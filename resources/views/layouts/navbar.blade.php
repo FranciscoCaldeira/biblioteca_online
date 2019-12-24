@@ -6,31 +6,40 @@
 	</h1>
 	<nav class="main-nav">
 	  <ul class="main-nav-list">
-		<li>
-		  <a href="{{ url('/') }}" class="btn-nav"> Início</a>
-		</li>
-		<li>
-		  <a href="{{ url('/about') }}" class="btn-nav"> Sobre</a>
-		</li>
-		<li>
-		  <a href="{{ url('/contact') }}" class="btn-nav"> Contactos</a>
-		</li>
-		<li>
-		  <a href="{{ url('/faqs') }}" class="btn-nav"> FAQS</a>
-		</li>
 			@if (Route::has('login'))
 					@auth
 					<li>
-						<a class="btn-nav" href="{{ url('/home') }}">HomeLaravel-Homepage</a>
+						<a href="{{ url('/faqs') }}" class="btn-nav">FAQS</a>
+					</li>
+					<li>
+						<a href="{{ url('/contact') }}" class="btn-nav"> Contactos</a>
+					</li>
+					<li>
+						<a class="btn-nav" href="{{ url('/home') }}">Homepage</a>
+					</li>
+					<li>
+						<a class="btn-nav" href="{{ url('/logout') }}">Logout</a>
 					</li>
 					@else
+						<li>
+							<a href="{{ url('/') }}" class="btn-nav"> Início</a>
+						</li>
+						<li>
+							<a href="{{ url('/about') }}" class="btn-nav"> Sobre</a>
+						</li>
+						<li>
+							<a href="{{ url('/faqs') }}" class="btn-nav"> FAQS</a>
+						</li>
+						<li>
+							<a href="{{ url('/contact') }}" class="btn-nav"> Contactos</a>
+						</li>
 						<li>
 							<a class="btn-nav" href="{{ route('login') }}">Login</a>
 						</li>
 						@if (Route::has('register'))
-						<li>
-							<a class="btn-nav" href="{{ route('register') }}">Register</a>
-						</li>
+							<li>
+								<a class="btn-nav" href="{{ route('register') }}">Register</a>
+							</li>
 						@endif
 					@endauth
 			@endif
