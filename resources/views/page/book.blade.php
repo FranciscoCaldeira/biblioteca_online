@@ -39,11 +39,11 @@
                         @endif
                     </div>
                     <div class="card_content">
-                        <h2 class="card_title">{{ __('Título') }}: {{$book->title}}</h2>
-                        <h3 class="card_title">{{ __('Autor') }}: {{$book->author}}</h3>
-                        <h3 class="card_title">{{ __('ISBN') }}: {{$book->isbn}}</h3>
-                        <h3 class="card_title qntAvailable">{{ __('Disponível') }}: {{$book->qntAvailable}}</h3>
-                        <p class="card_text">{{ __('Sinopse') }}: <br> {{$book->resume}}</p>
+                    {{ __('Título') }}: <h2 class="card_title title_book"> {{$book->title}}</h2> <br>
+                    {{ __('Autor') }}: <h3 class="card_title author"> {{$book->author}}</h3> <br>
+                    {{ __('ISBN') }}:<h3 class="card_title isbn"> {{$book->isbn}}</h3> <br>
+                    {{ __('Disponível') }}: <h3 class="card_title qntAvailable">{{$book->qntAvailable}}</h3> <br>
+                    {{ __('Sinopse') }}:<p class="card_text resume">{{$book->resume}}</p>
                             <div class="card_action">
                             @if($book->qntAvailable > 0)
                                 <form method="POST" action="/request/add/<?=$book->id?>">
@@ -53,9 +53,9 @@
                             @endif
 
                             @if($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin'))
-                            <button class="btn card_btn">{{ __('Editar') }}</button>
+                            <button class="btn card_btn edit" value="<?=$book->id?>" >{{ __('Editar') }}</button>
 
-                            <form method="POST" action="{{ route('delete_book', <?=$book->id?>) }}">
+                            <form method="POST" action="/book/delete/<?=$book->id?>">
                                 @csrf
                                 <button type="submit" class="btn card_btn">{{ __('Apagar') }} </button>
                             </form>
@@ -72,7 +72,7 @@
     @if($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin'))
         <div class="container_form">
             <div class="wrapper_form">
-                <form method="POST" action="{{ route('add_book') }}" enctype="multipart/form-data">
+                <form id="form" method="POST" action="{{ route('add_book') }}" enctype="multipart/form-data">
                     @csrf
                     <ul>
                         <li class="form-row">    
@@ -158,7 +158,7 @@
                         @enderror
 
                         <li class="form-row">
-                            <button type="submit" class="btn btn-primary">{{ __('Adicionar Livro') }}</button>
+                            <button type="submit" class="btn btn-primary">{{ __('Gravar Livro') }}</button>
                         </li>
                     </ul>
                 </form>
@@ -176,6 +176,18 @@
                 } else {
                     $(".alert").hide();
                 }
+            });
+
+            
+            $('.edit').click(function() {
+                var book_id = $(this).val();
+                $("#title").val($("#"+book_id+" .title_book").text());
+                $("#author").val($("#"+book_id+" .author").text());
+                $("#isbn").val($("#"+book_id+" .isbn").text());
+                $("#resume").val($("#"+book_id+" .resume").text());
+                $("#qntAvailable").val($("#"+book_id+" .qntAvailable").text());
+                $("#image").removeAttr('required');
+                $("#form").attr('action', '/book/update/'+book_id);
             });
 
         });

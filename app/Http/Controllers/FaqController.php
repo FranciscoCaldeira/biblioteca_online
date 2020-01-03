@@ -54,7 +54,6 @@ class FaqController extends Controller
 
     public function delete($id)
     {
-
         $user = Auth::user();
         $role = Role::get_user_role();
 

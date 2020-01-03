@@ -175,37 +175,37 @@ table tbody tr:nth-child(even) td {
 }
 
 /*End forms*/
-/*Body page*/
 /*Title*/
-/* line 144, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 142, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 .container_titulo {
   display: flex;
   align-items: center;
 }
 
-/* line 148, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 146, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 .hr_esquerda {
   width: 50%;
 }
 
-/* line 151, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 149, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 .hr {
   border-top: 1px solid #EBEBEB;
   display: block;
 }
 
-/* line 155, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 153, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 .titulo {
   -webkit-flex: none;
   padding: 0 .8em;
 }
 
-/* line 159, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 157, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 .hr_direita {
   width: 50%;
 }
 
 /*End title*/
+/*Homepage page*/
 /*Start carrossel img*/
 /* line 165, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 .carousel-container {
@@ -554,7 +554,7 @@ footer .sfllow .fa.fa-instagram {
   padding: 1rem;
 }
 
-/* line 481, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 469, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 #books .card {
   background-color: whitesmoke;
   border-radius: 0.25rem;
@@ -565,13 +565,13 @@ footer .sfllow .fa.fa-instagram {
   border: 1px solid black;
 }
 
-/* line 491, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 479, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 #books .card_content {
   padding: 1rem;
   background: linear-gradient(to bottom left, #f5f5f55b 40%, whitesmoke 100%);
 }
 
-/* line 496, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 484, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 #books .card_title {
   color: #636b6f;
   font-size: 1.1rem;
@@ -581,7 +581,7 @@ footer .sfllow .fa.fa-instagram {
   margin: 0px;
 }
 
-/* line 505, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+/* line 493, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
 #books .card_text {
   color: #636b6f;
   font-size: 0.875rem;

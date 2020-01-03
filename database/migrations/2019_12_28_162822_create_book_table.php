@@ -23,6 +23,7 @@ class CreateBookTable extends Migration
             $table->integer('qntAvailable');
             $table->string('filepath');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

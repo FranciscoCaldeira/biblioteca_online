@@ -24,8 +24,14 @@
     @endif
 
     @if(count($faqs) == 0)
-        <p>{{_('Não existem faqs de momento')}}.</p>
-        <p>{{_('Precisa de ajuda, envie-nos um email')}} <a href="/contact">{{ __('aqui') }}</a>.</p>
+    <div class="wrapper">
+        <div></div>
+        <div>
+            <p>{{_('Não existem faqs de momento')}}.</p>
+            <p>{{_('Precisa de ajuda, envie-nos um email')}} <a href="/contact">{{ __('aqui') }}</a>.</p>
+        </div>
+        <div></div>
+    </div>
     @else
         @foreach ($faqs as $key => $faq)
         <div class="parent-container">

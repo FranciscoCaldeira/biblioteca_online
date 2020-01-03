@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Role;
+use App\Request as R;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
     public function index(){
         $role = Role::get_user_role();
-        $books = Book::get();
+        $books = Book::get()->where('deleted_at' ,'==', null);
 
         return view('page.book', ['books' => $books,
                                   'role'  => $role,
@@ -21,16 +23,6 @@ class BookController extends Controller
     public function add(Request $req) {
         $user = Auth::user();
         $role = Role::get_user_role();
-
-        //$validatedData = $req->validate([
-        //    'title' => 'required|',
-        //    'author' => 'required',
-        //    'isbn' => 'required',
-        //    'resume' => 'required|max:255',
-        //    'qntAvailable' => 'required',
-        //    'qntAvailable' => 'required',
-        //]);
-
 
         if($user && ($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin'))){
             $book = new Book();
@@ -69,16 +61,53 @@ class BookController extends Controller
         
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $user = Auth::user();
         $role = Role::get_user_role();
+
+        $request = R::request_has_book($id);
+        
+        if($request->count() == 0) {
+            if($user && ($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin')) ) {
+                Book::where('id',$id)->delete();
+                return redirect('/book')->with('success','Livro Removido');
+            } else {
+                return redirect("/")->with('error','Página não autorizada');
+            }
+        } else {
+            return redirect("/book")->with('error','Não pode remover pois tem Pedidos');
+        }
+    }
+
+    public function update(Request $req, $id)
+    {
+        $user = Auth::user();
+        $role = Role::get_user_role();
+
         
         if($user && ($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin')) ) {
-            Book::where('id',$id)->delete();
-            return redirect('/book')->with('success','Livro Removido');
-        } else {
-            return redirect("/")->with('error','Página não autorizada');
-        }
+
+            $book = new Book();
+            
+            $book->title = $req->input('title');
+            $book->author   = $req->input('author');
+            $book->isbn = $req->input('isbn');
+            $book->resume = $req->input('resume');
+            $book->qntAvailable   = $req->input('qntAvailable');
+            
+            DB::table('book')
+                    ->where('id', $id)
+                    ->update(['title'=> $book->title,
+                              'author' => $book->author,
+                              'isbn'  => $book->isbn,
+                              'resume' => $book->resume,
+                              'qntAvailable' => $book->qntAvailable]
+                              );
+        
+                return redirect("/book")->with('success','Livro editado');
+            } else {
+                return redirect("/")->with('error','Página não autorizada');
+            }
     }
 }

@@ -78,7 +78,9 @@ Auth::routes(['verify' => true]);
 Route::get('/book','BookController@index')->name('book');
 Route::post('/book/add','BookController@add')->name('add_book');
 Route::get('/book/{id}','BookController@showDetails');
-Route::get('/book/delete/{id}','BookController@destroy')->name('delete_book');//tentei post e não funfa
+Route::post('/book/delete/{id}','BookController@delete');
+Route::post('/book/update/{id}', 'BookController@update');
+
 
 Route::get('/request','RequestController@index')->name('request');
 Route::post('/request/add/{book_id}','RequestController@add');

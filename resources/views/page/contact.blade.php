@@ -4,12 +4,29 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt2YQVoj9SP1SC_qpYFX9iZHSJi0FHiiQ&callback=initMap" type="text/javascript"></script>
   	@component('layouts.component.title')
           {{ __('text.Contactos') }}
-    @endcomponent
-
+	@endcomponent
+	
+	<div class="wrapper">
+		<div></div>
+		<div>
+			<address>
+				<p>{{('Morada: Universidade da madeira 3º andar')}}</p>
+				<p>{{('Código postal: 9000-082 Funchal')}}</p>
+				<p>{{('Tel.: 291 999 999')}}</p>
+				<p>{{('E-mail geral:')}} <a href="mailto:bibliotecaonline2004019@gmail.com">{{('bibliotecaonline2004019@gmail.com')}}</a></p>
+			</address>
+		</div>
+		<div></div>
+	</div>
     <div id="map"></div>
 
 	<br>
-	<p>{{('Envia uma mensagem:')}}</p>
+	<div class="wrapper">
+		<div></div>
+		<div><p>{{('Escreve uma mensagem para nós:')}}</p></div>
+		<div></div>
+	</div>
+	
 	@if (count($errors)>0)
         @foreach ($errors->all() as $error)
         <ul class="alert">           

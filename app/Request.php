@@ -37,4 +37,10 @@ class Request extends Model
                     ->update(['request_state_id' => $request_state_id]);
         return $affected;
     }
+
+    public static function request_has_book($book_id) {
+        $request = DB::table('request')->where('book_id','=' ,$book_id)
+                    ->get();
+        return $request;
+    }
 }
