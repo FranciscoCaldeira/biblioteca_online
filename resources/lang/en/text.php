@@ -30,6 +30,8 @@
         'Perfil' =>'Profile',
         'Utilizadores' => 'Users',
         'Requisições' =>'Request',
+        'Aceitar/eliminar requisições' => 'accept/delete request',
+        'Seja bem-vindo' =>'Welcome'
 
 
     ]

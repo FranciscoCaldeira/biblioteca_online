@@ -30,6 +30,7 @@
         'Perfil' =>'Perfil',
         'Utilizadores' => 'Utilizadores',
         'Requisições' =>'Requisições',
-
+        'Aceitar/eliminar requisições' => 'Aceitar/eliminar requisições',
+        'Seja bem-vindo' =>'Seja bem-vindo'
     ]
 ?>

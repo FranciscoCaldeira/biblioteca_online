@@ -23,7 +23,6 @@
     <div>notícias//destaques//</div>
     <div>i am the home page</div>
 
-
     <script>
         $(document).ready(function() {
             var slideIndex = 0;

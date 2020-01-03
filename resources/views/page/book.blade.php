@@ -23,7 +23,6 @@
         </ul>
     @endif
 
-
     @if (count($books) == 0)
         <p>{{ __('Sem nenhum livro para mostrar.') }}</p>
     @else

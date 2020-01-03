@@ -9,7 +9,24 @@
     <div id="map"></div>
 
 	<br>
-	
+	<p>{{('Envia uma mensagem:')}}</p>
+	@if (count($errors)>0)
+        @foreach ($errors->all() as $error)
+        <ul class="alert">           
+            <li class="alert-danger">
+                {{$error}}
+            </li>
+        </ul>
+        @endforeach
+    @endif
+
+    @if (session('success'))
+        <ul class="alert">           
+            <li class="alert-success">
+                {{session('success')}}
+            </li>
+        </ul>
+    @endif
 	<div class="container_form">
 		<div class="wrapper_form">
 			<form method="POST" action="{{ route('add_contact') }}">
@@ -17,7 +34,7 @@
 				<ul>
 				<li class="form-row">    
 					<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
-					<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+					<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{{ isset(Auth::user()->name) ? Auth::user()->name : '' }}}" required autocomplete="name" autofocus>
 				</li>
 				@error('name')
 					<li class="form-row">
@@ -26,10 +43,9 @@
 						</span>
 					</li>
 				@enderror
-				<!-- colocar o email se tiver em sessão -->
 				<li class="form-row"> 
 					<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-					<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+					<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{{ isset(Auth::user()->name) ? Auth::user()->email : '' }}}" required autocomplete="email">
 				</li>
 				@error('email')
 					<li class="form-row">

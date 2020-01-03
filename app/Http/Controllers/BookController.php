@@ -48,7 +48,7 @@ class BookController extends Controller
             $book->filepath = $filename;
 
             $book->save();
-            return redirect("/book")->with('success','Livro adicionado');;
+            return redirect("/book")->with('success','Livro adicionado');
         } else {
             return redirect("/")->with('error','Página não autorizada');
         }

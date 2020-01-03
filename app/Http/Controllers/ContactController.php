@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request ;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Role;
-
 class ContactController extends Controller
 {
     public function index()
@@ -25,8 +26,20 @@ class ContactController extends Controller
         return view('page.contact', ['role'  => $role]);
     }
 
-    public function add()
+    public function send(Request $req)
     {
-        return 123;
+        
+        $data = array(
+            'name'      =>  $req->name,
+            'email'      =>  $req->email,
+            'textarea'   =>   $req->textarea
+        );
+        
+        Mail::send('layouts.email', $data , function($message) {
+            $message->from('bibliotecaonline2004019@gmail.com', 'Biblioteca Escolar Online');
+            $message->to('2004019@student.uma.pt');
+        });
+
+        return redirect("/contact")->with('success','Mensagem recebida, respondemos mais tarde!');
     }
 }

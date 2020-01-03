@@ -22,46 +22,68 @@
     @endif
 
     <div id="main">
-        @if ($role == config('constants.roles.super_admin'))
-            {{ __('text.Super Administrador')}}
-            
-            <div class="wrapper">
-                <div></div>
-                <div> <a href="{{ url('/users') }}" class="btn"> {{ __('text.Mudar roles de utilizadores')}} </a> </div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="wrapper">
-                <div></div>
-                <div> <a href="{{ url('/book') }}" class="btn"> {{ __('text.Adicionar/editar/eliminar livros')}} </a>  </div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="wrapper">
-                <div></div>
-                <div> <a href="{{ url('/request') }}" class="btn"> {{ __('text.Aceitar/eliminar requisições')}} </a>  </div>
-                <div></div>
-                <div></div>
-            </div>
-        @elseif ($role == config('constants.roles.admin'))
-            {{ __('text.Administrador')}}<br>
+        @if(isset($role))
+            @if ($role == config('constants.roles.super_admin'))
+                {{__('text.Seja bem-vindo')}} {{Auth::user()->name}} {{ __('text.Super Administrador')}} {{('pretende :')}}
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/users') }}" class="btn"> {{ __('Mudar roles e bloquear utilizadores')}}</a></div>
+                    <div></div>
+                </div>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/book') }}" class="btn"> {{ __('Adicionar/editar/eliminar/requisitar livros')}}</a></div>
+                    <div></div>
+                </div>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/request') }}" class="btn"> {{ __('Aceitar/rejeitar/cancelar requisições')}}</a></div>
+                    <div></div>
+                </div>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/faq') }}" class="btn"> {{ __('Adicionar/editar/apagar Faqs')}}</a></div>
+                    <div></div>
+                </div>
+            @elseif ($role == config('constants.roles.admin'))
+                {{__('text.Seja bem-vindo')}} {{Auth::user()->name}} {{ __('text.Administrador')}}  {{('pretende :')}}<br>
 
-            {{ __('text.Adicionar/editar/eliminar livros')}}<br>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/book') }}" class="btn"> {{ __('Adicionar/editar/eliminar/requisitar livros')}} </a>  </div>
+                    <div></div>
+                </div>
 
-            {{ __('text.Adicionar/editar/eliminar requisições')}}<br>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/request') }}" class="btn"> {{ __('Aceitar/rejeitar/cancelar requisições')}} </a>  </div>
+                    <div></div>
+                </div>
 
-        @elseif ($role == config('constants.roles.user'))
-            {{ __('text.Utilizador')}}<br>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/faq') }}" class="btn"> {{ __('Adicionar/editar/apagar Faqs')}} </a>  </div>
+                    <div></div>
+                </div>
 
-            {{ __('Adicionar requisições')}}<br>
+            @elseif ($role == config('constants.roles.user'))
+                {{__('text.Seja bem-vindo')}} {{Auth::user()->name}} {{ __('text.Utilizador')}}  {{('pretende :')}}<br>
 
-            {{ __('Editar perfil')}}<br>
-        @else
-        {{ __('text.Utilizador')}}<br>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/request') }}" class="btn"> {{ __('Pedir/cancelar requisições')}} </a>  </div>
+                    <div></div>
+                </div>
+            @else
+                {{__('text.Seja bem-vindo')}} {{Auth::user()->name}} {{ __('text.Utilizador')}}  {{('pretende :')}}<br>
 
-        {{ __('Adicionar requisições')}}<br>
-
-        {{ __('Editar perfil')}}<br>
+                <div class="wrapper">
+                    <div></div>
+                    <div> <a href="{{ url('/request') }}" class="btn"> {{ __('Pedir/cancelar requisições')}} </a>  </div>
+                    <div></div>
+                </div>
+            @endif
         @endif
+        
     </div>
 @endsection

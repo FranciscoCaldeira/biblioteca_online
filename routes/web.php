@@ -65,7 +65,7 @@ Route::get('/pt', function () {
 
 
 Route::get('/contact', 'ContactController@index')->name('contact');
-Route::post('/contact/submit', 'ContactController@add')->name('add_contact');
+Route::post('/contact/send', 'ContactController@send')->name('add_contact');
 
 Route::get('/faq', 'FaqController@index')->name('faq');
 Route::post('/faq/post_faq', 'FaqController@add')->name('post_faq');
@@ -73,7 +73,7 @@ Route::post('/faq/delete/{id}', 'FaqController@delete');
 Route::post('/faq/update/{id}', 'FaqController@update');
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/book','BookController@index')->name('book');
 Route::post('/book/add','BookController@add')->name('add_book');
