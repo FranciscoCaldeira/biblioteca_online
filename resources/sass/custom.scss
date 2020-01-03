@@ -50,6 +50,41 @@ html, body {
     text-decoration: none;
     text-transform: uppercase;
 }
+
+.wrapper {
+    display: flex;
+    > div {
+        flex: 1;
+    }
+}
+
+#main {
+    height: 400px;
+    a, a:link, a:visited, a:focus, a:hover, a:active{
+        color: black;
+        text-decoration: none; 
+        cursor: pointer;
+    }
+}
+
+table {
+    margin-left: 40px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    thead {
+        color :white !important; 
+        background: black !important;
+        border: 1px solid black;
+    }
+    tbody {
+        tr:nth-child(even) {
+                background: whitesmoke;
+            td {
+                border: 0px ;
+            }
+        }
+    }
+}
 /* end laravel fisrt step*/
 
 /*forms*/
@@ -69,7 +104,11 @@ html, body {
         display: flex;
         justify-content: flex-end;
         padding: .5em;
+        .invalid-feedback {
+            color: red;
+        }
     }
+
     .form-row > label {
         padding: .5em 1em .5em 0;
         width: 20%;
@@ -87,6 +126,17 @@ html, body {
         border: 0;
         width: 100px;
     }
+
+    .alert {
+        list-style: none;
+        .alert-danger {
+            color: red;
+        }
+        .alert-success {
+            color: green;
+        }
+    }
+
 /*End forms*/
 
 /*Body page*/
@@ -94,102 +144,20 @@ html, body {
         .container_titulo {
             display: flex;
             align-items: center;
-            /* -webkit-tap-highlight-color: rgba(0,0,0,0);
-            -webkit-font-smoothing: antialiased;
-            font-size: 13px;
-            line-height: 22px;
-            font-weight: 400;
-            letter-spacing: 0px;
-            color: #666666;
-            margin: 0;
-            padding: 0;
-            margin-bottom: 20px;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            -webkit-box-align: center;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto; */
         }
         .hr_esquerda {
             width: 50%;
-            /* -webkit-tap-highlight-color: rgba(0,0,0,0);
-            -webkit-font-smoothing: antialiased;
-            font-size: 13px;
-            line-height: 22px;
-            font-weight: 400;
-            letter-spacing: 0px;
-            color: #666666;
-            -webkit-box-direction: normal;
-            margin: 0;
-            padding: 0;
-            display: table-cell;
-            vertical-align: middle;
-            height: 1px;
-            position: relative;
-            -webkit-box-flex: 1;
-            flex: 1 1 auto;
-            min-width: 1%; */
         }
         .hr {
             border-top: 1px solid #EBEBEB;
             display: block;
-            /* -webkit-tap-highlight-color: rgba(0,0,0,0);
-            -webkit-font-smoothing: antialiased;
-            font-size: 13px;
-            line-height: 22px;
-            font-weight: 400;
-            letter-spacing: 0px;
-            color: #666666;
-            -webkit-box-direction: normal;
-            margin: 0;
-            padding: 0;
-            height: 1px;
-            position: relative;
-            top: 1px;
-            width: 100%;
-            border-color: #ebebeb; */
         }
         .titulo {
             -webkit-flex: none;
             padding: 0 .8em;
-            /* -webkit-tap-highlight-color: rgba(0,0,0,0);
-            -webkit-font-smoothing: antialiased;
-            letter-spacing: 0px;
-            -webkit-box-direction: normal;
-            font-weight: 400;
-            line-height: 1em;
-            margin: 0;
-            -webkit-box-flex: 0;
-            white-space: nowrap;
-            word-wrap: break-word;
-            display: table-cell;
-            box-sizing: border-box;
-            font-size: 24px;
-            text-transform: uppercase;
-            color: black; */
         }
         .hr_direita {
             width: 50%;
-            /* -webkit-tap-highlight-color: rgba(0,0,0,0);
-            -webkit-font-smoothing: antialiased;
-            font-size: 13px;
-            line-height: 22px;
-            font-weight: 400;
-            letter-spacing: 0px;
-            color: #666666;
-            -webkit-box-direction: normal;
-            margin: 0;
-            padding: 0;
-            display: table-cell;
-            vertical-align: middle; 
-            height: 1px;
-            position: relative;
-            -webkit-box-flex: 1;
-            flex: 1 1 auto;
-            min-width: 1%; */
         }
     /*End title*/
 
@@ -287,4 +255,260 @@ html, body {
             text-decoration: none;
         }
         /*end-navbar*/
+
+        /*footer*/
+        footer {
+            width: 100%;
+            background-color: grey;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            //position: absolute;
+            //bottom: 0;
+            a, a:link, a:visited, a:focus, a:hover, a:active{
+                color: white;
+                text-decoration: none; 
+                cursor: pointer;
+            }
+            .flag {
+                img {
+                    width: 30px;
+                    height: 20px;
+                }
+            }
+            .sfllow {
+                .fa {
+                    padding: 10px !important;
+                    font-size: 15px !important;
+                    width: 15px !important;
+                    text-align: center !important;
+                    text-decoration: none !important;
+                    margin: 5px 2px !important;
+                    border-radius: 50% !important;
+                    &:hover {
+                        opacity: 0.7 !important;
+                    }
+                    &.fa-facebook {
+                        background: #3B5998;
+                        color: white;
+                    }
+                    &.fa-google {
+                        background: #dd4b39;
+                        color: white;
+                    }
+                    &.fa-youtube {
+                        background: #bb0000;
+                        color: white;
+                    }
+                    &.fa-instagram {
+                        background: #125688;
+                        color: white;
+                    }
+                  }
+            }
+        }
+        /*end footer*/
 /**/
+
+/*FAQ page*/
+
+@import "compass";
+
+$font-sans-family:sans-serif;
+$font-serif-family:serif;
+  
+$header-color:#090909;
+$paragraph-color:#090909;
+
+$fact-question-color:$header-color;
+$fact-question-color-active:#808080;
+
+$mobile:"max-width:767px";
+
+.parent-container {
+  padding:0 20px 0 10px;
+  max-width:800px;
+  width:100%;
+}
+.faq {
+  list-style:none;
+  padding-left:40px;
+  padding-right:20px;
+  li {
+    border-bottom:1px solid #999999;
+    margin-bottom:15px;
+    &.active {
+      .answer {
+        max-height:275px !important;
+        padding-bottom:25px;
+        transition: max-height 0.5s ease, padding-bottom 0.5s ease;
+      }
+      .question {
+        color:$fact-question-color-active;
+        transition:color 0.5s ease;
+      }
+    }
+  }
+  .answer {
+    color:$paragraph-color;
+    font-family:$font-serif-family;
+    font-size:16px;
+    line-height:24px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.5s ease, padding-bottom 0.5s ease;
+  }
+  .plus-minus-toggle {
+    cursor: pointer;
+    height: 21px;
+    position: absolute;
+    width: 21px;
+    left:-40px;
+    top:50%;
+    z-index:2;
+
+    &:before,
+    &:after {
+      background: #000;
+      content: '';
+      height: 5px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 21px;
+      transition: transform 500ms ease;
+    }
+
+    &:after {
+      transform-origin: center;
+    }
+
+    &.collapsed {
+      &:after {
+        transform: rotate(90deg);
+      }
+
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .question {
+    color:$fact-question-color;
+    font-family:$font-sans-family;
+    font-size:20px;
+    font-weight:800;
+    text-transform:uppercase;
+    position:relative;
+    cursor:pointer;
+    padding:20px 0;
+    transition:color 0.5s ease; 
+    @media screen and ($mobile) {
+      font-size:18px;
+    }
+  }
+}
+
+/*END FAQ*/
+
+/*contact page*/
+#map {
+    height:500px;
+}
+/*End contact page*/
+
+/*Books page*/
+#books {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    .main{
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      img {
+        height: 100px;
+        max-width: 200px;
+        vertical-align: middle;
+      }
+      
+      .btn {
+        color: #636b6f;
+        padding: 0.8rem;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        font-weight: 400;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        border: 1px solid black;
+      }
+      
+      .btn:hover {
+        background-color:whitesmoke;
+      }
+      
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .cards_item {
+        display: flex;
+        padding: 1rem;
+      }
+      
+    //   @media (min-width: 40rem) {
+    //     .cards_item {
+    //       width: 50%;
+    //     }
+    //   }
+      
+    //   @media (min-width: 56rem) {
+    //     .cards_item {
+    //       width: 33.3333%;
+    //     }
+    //   }
+      
+      .card {
+        background-color: whitesmoke;
+        border-radius: 0.25rem;
+        box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid black;
+      }
+      
+      .card_content {
+        padding: 1rem;
+        background: linear-gradient(to bottom left, #f5f5f55b 40%, whitesmoke 100%);
+      }
+      
+      .card_title {
+        color: #636b6f;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        margin: 0px;
+      }
+      
+      .card_text {
+        color: #636b6f;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 1.25rem;    
+        font-weight: 400;
+      }
+
+}
+/*End Books page*/

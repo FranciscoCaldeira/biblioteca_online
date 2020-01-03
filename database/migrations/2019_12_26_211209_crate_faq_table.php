@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolesTable extends Migration
+class CrateFaqTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('roles');
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::dropIfExists('faq');
+        Schema::create('faq', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('description');
+            $table->string('question');
+            $table->string('answer');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        //
     }
 }

@@ -2,7 +2,10 @@
 
 @section('content')
     @component('layouts.component.title')
-        Sobre
+        {{ __('Sobre') }}
     @endcomponent
 
+    <div class="wrapper">
+        <div>Biblioteca utilizando a framework Laravel</div>
+    </div>
 @endsection

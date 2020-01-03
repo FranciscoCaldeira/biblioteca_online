@@ -51,14 +51,14 @@
                 </li>
             @enderror
             <li class="form-row"> 
-                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password*') }}</label>
+                <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('text.Confirma Password') }}*</label>
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
             </li>
             <li class="form-row"> 
-                <h6>{{ __('*Precisa defenir uma password com mais de 8 caracteres')}}</h6>
+                <h6>*{{ __('text.Precisa definir uma password com mais de 8 caracteres')}}</h6>
             </li>
             <li class="form-row">
-                <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
+                <button type="submit" class="btn btn-primary">{{ __('text.Registar') }}</button>
             </li>
             </ul>
         </form>

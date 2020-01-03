@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -41,4 +42,18 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
+
+    public function request()
+    {
+        return $this->belongsToMany('App\Request');
+    }
+
+    public static function block_user($id)
+    {
+        $affected = DB::table('users')
+                    ->where('id', $id)
+                    ->update(['password' => '-bloqueado-']);
+        return $affected;
+    }
+
 }

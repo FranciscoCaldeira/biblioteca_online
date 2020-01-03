@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Role;
 
 class HomeController extends Controller
 {
@@ -17,6 +17,8 @@ class HomeController extends Controller
     }
 
     public function index() {
-        return view('home');
+        $role = Role::get_user_role();
+        
+        return view('home',['role' => $role]);
     }
 }

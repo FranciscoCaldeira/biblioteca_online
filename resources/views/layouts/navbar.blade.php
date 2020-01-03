@@ -8,37 +8,52 @@
 	  <ul class="main-nav-list">
 			@if (Route::has('login'))
 					@auth
+					@if ($role == config('constants.roles.super_admin'))
+						<li>
+							<a href="{{ url('/users') }}" class="btn-nav"> {{ __('text.Utilizadores') }}</a>
+						</li>
+						<li>
+							<a href="{{ url('/request') }}" class="btn-nav"> {{ __('text.Requisições') }}</a>
+						</li>
+					@elseif($role == config('constants.roles.admin'))
+						<li>
+							<a href="{{ url('/request') }}" class="btn-nav"> {{ __('text.Requisições') }}</a>
+						</li>
+					@endif
 					<li>
-						<a href="{{ url('/faqs') }}" class="btn-nav">FAQS</a>
+						<a href="{{ url('/book') }}" class="btn-nav"> {{ __('text.Livros') }}</a>
 					</li>
 					<li>
-						<a href="{{ url('/contact') }}" class="btn-nav"> Contactos</a>
+						<a href="{{ url('/faq') }}" class="btn-nav">{{ __('text.FAQS') }}</a>
 					</li>
 					<li>
-						<a class="btn-nav" href="{{ url('/home') }}">Homepage</a>
+						<a href="{{ url('/contact') }}" class="btn-nav">{{ __('text.Contactos')}}</a>
 					</li>
 					<li>
-						<a class="btn-nav" href="{{ url('/logout') }}">Logout</a>
+						<a class="btn-nav" href="{{ url('/home') }}">{{ __('text.Perfil') }}</a>
+					</li>
+					<li>
+						<a class="btn-nav" href="{{ url('/logout') }}">{{ __('text.Sair') }}</a>
 					</li>
 					@else
 						<li>
-							<a href="{{ url('/') }}" class="btn-nav"> Início</a>
+							<a href="{{ url('/') }}" class="btn-nav">{{ __('text.Início') }}</a>
 						</li>
 						<li>
-							<a href="{{ url('/about') }}" class="btn-nav"> Sobre</a>
+							<a href="{{ url('/about') }}" class="btn-nav">{{ __('text.Sobre') }}</a>
 						</li>
 						<li>
-							<a href="{{ url('/faqs') }}" class="btn-nav"> FAQS</a>
+							<a href="{{ url('/faq') }}" class="btn-nav">{{ __('text.FAQS') }}</a>
 						</li>
 						<li>
-							<a href="{{ url('/contact') }}" class="btn-nav"> Contactos</a>
+							<a href="{{ url('/contact') }}" class="btn-nav">{{ __('text.Contactos')}}</a>
 						</li>
 						<li>
-							<a class="btn-nav" href="{{ route('login') }}">Login</a>
+							<a class="btn-nav" href="{{ route('login') }}">{{ __('text.Login')}}</a>
 						</li>
 						@if (Route::has('register'))
 							<li>
-								<a class="btn-nav" href="{{ route('register') }}">Register</a>
+								<a class="btn-nav" href="{{ route('register') }}">{{ __('text.Registar')}}</a>
 							</li>
 						@endif
 					@endauth
