@@ -22,10 +22,12 @@ Solução desenhada para visitantes registarem-se e utilizadores fazerem requisi
 Ficheiro .env a apontar para apontar para máquina local(127.0.0.1) e para a base de dados school_library .
 
 Features da solução:
-Responsive;
-API externas : Google maps e recapcha;
-Servidor de email;
-Traduções;
+<ul>
+    <li>Responsive;</li>
+    <li>API externas : Google maps e recapcha;</li>
+    <li>Servidor de email;</li>
+    <li>Traduções;</li>
+</ul>
 
 ## License
 
