@@ -18,8 +18,13 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Biblioteca Online
 
-Solução desenhada para visitantes registarem-se e utilizadores fazerem requisições de livros numa biblioteca online.
-Ficheiro .env a apontar para apontar para máquina local(127.0.0.1) e para a base de dados school_library .
+A solução está desenhada para que visitantes registarem-se e utilizadores façam requisições de livros numa biblioteca online.
+Os Administradores fazem a gestão de livros/pedidos/faqs.
+E os Super Administrador fazem a mesma gestão que o Admin incluindo a gestão de utilizadores.
+
+No ficheiro .env a apontar para apontar para máquina local(127.0.0.1) e para a base de dados school_library .Não foram colocados o utilizador e password da BD por questões de segurança. 
+Teste localmente a aplicação ou vá para <a href="http://66.175.221.248:3008/">aqui</a> onde está disponível num servidor remoto.
+OBS: a chave do recaptcha aponta para o domínio do servidor remoto e não vai funcionar se for localmente.
 
 Features da solução:
 <ul>
