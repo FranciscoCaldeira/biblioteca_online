@@ -1,0 +1,595 @@
+/*Laravel first css*/
+/* line 3, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+html, body {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+}
+
+/* line 11, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+html h6, body h6 {
+  margin: 0;
+}
+
+/* line 16, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.full-height {
+  height: 100vh;
+}
+
+/* line 20, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 26, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.position-ref {
+  position: relative;
+}
+
+/* line 30, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+/* line 36, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.content {
+  text-align: center;
+}
+
+/* line 40, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.title {
+  font-size: 84px;
+}
+
+/* line 44, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* line 54, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.wrapper {
+  display: flex;
+}
+
+/* line 56, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.wrapper > div {
+  flex: 1;
+}
+
+/* line 61, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#main {
+  height: 400px;
+}
+
+/* line 63, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#main a, #main a:link, #main a:visited, #main a:focus, #main a:hover, #main a:active {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 70, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+table {
+  margin-left: 40px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* line 74, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+table thead {
+  color: white !important;
+  background: black !important;
+  border: 1px solid black;
+}
+
+/* line 80, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+table tbody tr:nth-child(even) {
+  background: whitesmoke;
+}
+
+/* line 82, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+table tbody tr:nth-child(even) td {
+  border: 0px;
+}
+
+/* end laravel fisrt step*/
+/*forms*/
+/* line 91, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.container_form {
+  margin: 0 auto;
+  max-width: 56.25em;
+  margin-bottom: 20px;
+}
+
+/* line 97, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.wrapper_form {
+  background-color: whitesmoke;
+  list-style-type: none;
+  padding: 0;
+  border-radius: 3px;
+}
+
+/* line 103, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.form-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5em;
+}
+
+/* line 107, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.form-row .invalid-feedback {
+  color: red;
+}
+
+/* line 112, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.form-row > label {
+  padding: .5em 1em .5em 0;
+  width: 20%;
+}
+
+/* line 116, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.form-row > input {
+  flex: 1;
+}
+
+/* line 119, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.form-row > input,
+.form-row > button {
+  padding: .5em;
+}
+
+/* line 123, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.form-row > button {
+  background: gray;
+  color: white;
+  border: 0;
+  width: 100px;
+}
+
+/* line 130, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.alert {
+  list-style: none;
+}
+
+/* line 132, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.alert .alert-danger {
+  color: red;
+}
+
+/* line 135, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.alert .alert-success {
+  color: green;
+}
+
+/*End forms*/
+/*Title*/
+/* line 142, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.container_titulo {
+  display: flex;
+  align-items: center;
+}
+
+/* line 146, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.hr_esquerda {
+  width: 50%;
+}
+
+/* line 149, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.hr {
+  border-top: 1px solid #EBEBEB;
+  display: block;
+}
+
+/* line 153, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.titulo {
+  -webkit-flex: none;
+  padding: 0 .8em;
+}
+
+/* line 157, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.hr_direita {
+  width: 50%;
+}
+
+/*End title*/
+/*Homepage page*/
+/*Start carrossel img*/
+/* line 165, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.carousel-container {
+  max-width: 700px;
+  max-height: 400px;
+  position: relative;
+  margin: auto;
+}
+
+/* line 172, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.slide-img {
+  display: none;
+}
+
+/* line 175, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+img {
+  max-height: 200px;
+  width: 100%;
+}
+
+/* line 180, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*Start carrossel img*/
+/*End body page*/
+/*Page @includes*/
+/*navbar*/
+/* line 203, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.container_nav {
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* line 209, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.main-header .container_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* line 216, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.main-nav ul {
+  margin: 1em 0 .5em;
+  text-align: center;
+}
+
+/* line 220, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.main-nav li {
+  display: inline;
+}
+
+/* line 223, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.main-nav a {
+  display: inline-block;
+  padding: 0.2em 0.2em;
+  margin-left: 0.2em;
+  margin-top: 0.5em;
+}
+
+@media (min-width: 960px) {
+  /* line 231, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+  .main-header .container_nav {
+    justify-content: space-between;
+  }
+}
+
+/* line 236, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.btn-nav {
+  -webkit-tap-highlight-color: transparent;
+  line-height: 1.625em;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background-color: transparent;
+  transition: all 0.3s ease 0s;
+  margin: 0;
+  list-style: none;
+  padding: 0 8px 0px 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  color: grey;
+}
+
+/* line 254, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+a {
+  text-decoration: none;
+}
+
+/*end-navbar*/
+/*footer*/
+/* line 260, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer {
+  width: 100%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 268, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer a, footer a:link, footer a:visited, footer a:focus, footer a:hover, footer a:active {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 274, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer .flag img {
+  width: 30px;
+  height: 20px;
+}
+
+/* line 280, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer .sfllow .fa {
+  padding: 10px !important;
+  font-size: 15px !important;
+  width: 15px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  margin: 5px 2px !important;
+  border-radius: 50% !important;
+}
+
+/* line 288, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer .sfllow .fa:hover {
+  opacity: 0.7 !important;
+}
+
+/* line 291, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer .sfllow .fa.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* line 295, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer .sfllow .fa.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+/* line 299, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer .sfllow .fa.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+/* line 303, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+footer .sfllow .fa.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+/*end footer*/
+/**/
+/*FAQ page*/
+/* line 328, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.parent-container {
+  padding: 0 20px 0 10px;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* line 333, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq {
+  list-style: none;
+  padding-left: 40px;
+  padding-right: 20px;
+}
+
+/* line 337, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq li {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 15px;
+}
+
+/* line 341, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq li.active .answer {
+  max-height: 275px !important;
+  padding-bottom: 25px;
+  transition: max-height 0.5s ease, padding-bottom 0.5s ease;
+}
+
+/* line 346, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq li.active .question {
+  color: #808080;
+  transition: color 0.5s ease;
+}
+
+/* line 352, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq .answer {
+  color: #090909;
+  font-family: serif;
+  font-size: 16px;
+  line-height: 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding-bottom 0.5s ease;
+}
+
+/* line 361, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq .plus-minus-toggle {
+  cursor: pointer;
+  height: 21px;
+  position: absolute;
+  width: 21px;
+  left: -40px;
+  top: 50%;
+  z-index: 2;
+}
+
+/* line 370, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq .plus-minus-toggle:before, .faq .plus-minus-toggle:after {
+  background: #000;
+  content: '';
+  height: 5px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 21px;
+  transition: transform 500ms ease;
+}
+
+/* line 382, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq .plus-minus-toggle:after {
+  transform-origin: center;
+}
+
+/* line 387, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq .plus-minus-toggle.collapsed:after {
+  transform: rotate(90deg);
+}
+
+/* line 391, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq .plus-minus-toggle.collapsed:before {
+  transform: rotate(180deg);
+}
+
+/* line 396, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+.faq .question {
+  color: #090909;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+  padding: 20px 0;
+  transition: color 0.5s ease;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 396, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+  .faq .question {
+    font-size: 18px;
+  }
+}
+
+/*END FAQ*/
+/*contact page*/
+/* line 415, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#map {
+  height: 500px;
+}
+
+/*End contact page*/
+/*Books page*/
+/* line 422, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books *,
+#books *::before,
+#books *::after {
+  box-sizing: border-box;
+}
+
+/* line 428, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* line 433, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books img {
+  height: 100px;
+  max-width: 200px;
+  vertical-align: middle;
+}
+
+/* line 439, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .btn {
+  color: #636b6f;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+/* line 452, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .btn:hover {
+  background-color: whitesmoke;
+}
+
+/* line 456, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 464, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+/* line 469, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .card {
+  background-color: whitesmoke;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+/* line 479, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #f5f5f55b 40%, whitesmoke 100%);
+}
+
+/* line 484, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .card_title {
+  color: #636b6f;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+/* line 493, ../../../../xampp/htdocs/biblioteca_online/resources/sass/custom.scss */
+#books .card_text {
+  color: #636b6f;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+/*End Books page*/
+
+/*# sourceMappingURL=custom.css.map */

@@ -2,11 +2,12 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -36,4 +37,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+
+    public function request()
+    {
+        return $this->belongsToMany('App\Request');
+    }
+
+    public static function block_user($id)
+    {
+        $affected = DB::table('users')
+                    ->where('id', $id)
+                    ->update(['password' => '-bloqueado-']);
+        return $affected;
+    }
+
 }

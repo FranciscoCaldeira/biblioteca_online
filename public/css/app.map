@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "app.css",
+	"sources": [
+		"../../resources/sass/app.scss",
+		"../../resources/sass/_variables.scss"
+	],
+	"sourcesContent": [
+		"// Fonts\r\n@import url('https://fonts.googleapis.com/css?family=Nunito');\r\n\r\n// Variables\r\n@import 'variables';\r\n\r\n// Bootstrap\r\n// @import '~bootstrap/scss/bootstrap';\r\n\r\n",
+		"// Body\r\n$body-bg: #f8fafc;\r\n\r\n// Typography\r\n$font-family-sans-serif: 'Nunito', sans-serif;\r\n$font-size-base: 0.9rem;\r\n$line-height-base: 1.6;\r\n\r\n// Colors\r\n$blue: #3490dc;\r\n$indigo: #6574cd;\r\n$purple: #9561e2;\r\n$pink: #f66d9b;\r\n$red: #e3342f;\r\n$orange: #f6993f;\r\n$yellow: #ffed4a;\r\n$green: #38c172;\r\n$teal: #4dc0b5;\r\n$cyan: #6cb2eb;\r\n"
+	],
+	"names": [],
+	"mappings": "AACA,OAAO,CAAC,qDAAI"
+}

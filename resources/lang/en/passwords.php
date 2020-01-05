@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have e-mailed your password reset link!',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
-    'throttled' => 'Please wait before retrying.',
+    'password' => 'A password deve ter pelo menos oito caracteres e corresponder à confirmação.',
+    'reset' => 'A password foi alterada!',
+    'sent' => 'Enviamos um e-mail para redefinição da password!',
+    'token' => 'Este token de redefinição de password é inválido.',
+    'user' => "Não conseguimos encontrar um utilizador com esse endereço de email.",
 
 ];
