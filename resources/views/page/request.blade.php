@@ -30,12 +30,33 @@
                 <th>{{__('Status')}}</th>
                 <th>{{__('Pedido a')}}</th>
                 <th>{{__('Ação')}}</th>
-
             </tr>
         </thead>
         <tbody>
+            @php
+                $i=0;
+            @endphp
+            
             @foreach($requests as $row)
-                <tr>
+                @if($user_id == $row->user_id)
+                    @php
+                        $i++;
+                    @endphp
+                @elseif(($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin')))
+                    @php
+                        $i++;
+                    @endphp
+                @endif
+                @if($i==0)
+                    <ul class="alert">           
+                        <li class="alert-danger">
+                        {{__('Não existem registos de pedidos')}}
+                        </li>
+                    </ul>
+                    @break
+                @endif
+                @if($role == config('constants.roles.user') && $user_id == $row->user_id)
+                    <tr>
                     <td style="width: 100px;">{{$row->name}}</td>
                     <td>{{$row->email}}</td>
                     <td style="width: 300px;text-align:center;">
@@ -52,7 +73,35 @@
                     <td style="width: 100px;">{{$row->description}}</td>
                     <td style="width: 100px;">{{$row->created_at}}</td>
                     <td>
-                    @if($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin'))
+
+                    @if($row->request_state_id == config('constants.request_states.pendente'))
+                        <p>
+                            <form method="POST" action="request/cancel/<?=$row->id?>">
+                                @csrf
+                                <button type="submit" class="btn card_btn">{{ __('Cancelar Pedido') }} </button>
+                            </form>
+                        </p>
+                    @endif
+                    
+                    </tr>
+                @elseif(($role == config('constants.roles.admin') || $role == config('constants.roles.super_admin')))
+                    <tr>
+                    <td style="width: 100px;">{{$row->name}}</td>
+                    <td>{{$row->email}}</td>
+                    <td style="width: 300px;text-align:center;">
+                        <p>
+                            {{ __('Título') }}:  {{$row->title}}
+                        </p>
+                        <p>
+                            {{ __('Autor') }}:   {{$row->author}}
+                        </p>
+                        <p>
+                            {{ __('ISBN') }}:    {{$row->isbn}}
+                        </p>
+                    </td>
+                    <td style="width: 100px;">{{$row->description}}</td>
+                    <td style="width: 100px;">{{$row->created_at}}</td>
+                    <td>
                         @if($row->request_state_id == config('constants.request_states.pendente'))
                             <p>
                                 <form method="POST" action="request/accept/<?=$row->id?>">
@@ -74,18 +123,16 @@
                                 </form>
                             </p>
                         @endif
-                    @endif
-
-                    @if($row->request_state_id == config('constants.request_states.pendente') && $row->user_id == $user_id)
-                        <p>
-                            <form method="POST" action="request/cancel/<?=$row->id?>">
-                                @csrf
-                                <button type="submit" class="btn card_btn">{{ __('Cancelar Pedido') }} </button>
-                            </form>
-                        </p>
-                    @endif
-                    
-                </tr>
+                        @if($row->request_state_id == config('constants.request_states.pendente') && $row->user_id == $user_id)
+                            <p>
+                                <form method="POST" action="request/cancel/<?=$row->id?>">
+                                    @csrf
+                                    <button type="submit" class="btn card_btn">{{ __('Cancelar Pedido') }} </button>
+                                </form>
+                            </p>
+                        @endif
+                    </tr>
+                @endif
             @endforeach
         </tbody>
     </table>

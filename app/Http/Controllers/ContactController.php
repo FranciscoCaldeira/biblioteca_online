@@ -37,7 +37,7 @@ class ContactController extends Controller
         
         Mail::send('layouts.email', $data , function($message) {
             $message->from('bibliotecaonline2004019@gmail.com', 'Biblioteca Escolar Online');
-            $message->to('2004019@student.uma.pt');
+            $message->to('bibliotecaonline2004019@gmail.com');
         });
 
         return redirect("/contact")->with('success','Mensagem recebida, respondemos mais tarde!');

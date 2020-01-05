@@ -2,7 +2,33 @@
 
 @section('content')
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt2YQVoj9SP1SC_qpYFX9iZHSJi0FHiiQ&callback=initMap" type="text/javascript"></script>
-  	@component('layouts.component.title')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    async defer>
+</script>
+
+<script>
+var onloadCallback = function() {
+    grecaptcha.render('re-g-recaptcha', {
+      'sitekey' : '6Le-ZswUAAAAAP_Yk-CnDBq-nNCkqosJokt_fvDk'
+    });
+  };
+
+function get_recaptcha_valid() {
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha_msg').innerHTML="Valide o capcha!";
+        return false;
+    }
+    if(v.length != 0)
+    {
+        document.getElementById('captcha_msg').innerHTML="Capcha feito!";
+        return true; 
+    }
+}
+</script>
+	  @component('layouts.component.title')
           {{ __('text.Contactos') }}
 	@endcomponent
 	
@@ -18,6 +44,7 @@
 		</div>
 		<div></div>
 	</div>
+
     <div id="map"></div>
 
 	<br>
@@ -46,8 +73,10 @@
     @endif
 	<div class="container_form">
 		<div class="wrapper_form">
-			<form method="POST" action="{{ route('add_contact') }}">
+			<form method="POST" action="{{ route('add_contact') }}" onsubmit="return get_recaptcha_valid()">
 				@csrf
+				<div id="captcha_msg"></div>
+				<div id="re-g-recaptcha"></div>
 				<ul>
 				<li class="form-row">    
 					<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
